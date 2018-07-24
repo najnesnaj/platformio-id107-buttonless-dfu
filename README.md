@@ -26,7 +26,7 @@ if you write something to that service, it does not switch a led, but puts the w
 
 
 -------------------------------------------------------------
-you will these modified SDK 12.3 files under directory nordic
+you will find these modified SDK 12.3 files under directory nordic
 -------------------------------------------------------------
 
 in order to get to buttonless DFU I modified the bootloader
