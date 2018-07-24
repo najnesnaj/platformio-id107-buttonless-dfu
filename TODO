@@ -1,0 +1,8 @@
+the script
+ble_secure_dfu_controller.py
+is called twice
+
+-first to set watch to DFU
+-second to upload over the air
+
+should be possible in one call

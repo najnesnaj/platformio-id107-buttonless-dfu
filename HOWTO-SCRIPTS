@@ -12,17 +12,13 @@ here you have to combine s130_nrf51_2.0.1_softdevice.hex with the compiled progr
 to upload : ./upload (uses openocd and stmlink v2)
 
 2) upload via bluetooth
-this method uses the secure upload method, so you need the priv_key.pem and the booter.hex (which contains the bootloader that makes swithing to DFU possible)
+this method uses the secure upload method, so you need the priv_key.pem and the dfuboot.hex (which contains the bootloader and softdevice that makes swithing to DFU possible)
 for a detailed description : https://github.com/najnesnaj/ota-dfu-smartband 
 
-here the watch has to be in DFU mode
 
 There are two methods to get it into DFU mode
-A) if you upload the booter.hex, by default it will be in DFU mode (use the uploadboater script)
-B) from within a program you can softreset the watch, which will put it into DFU mode
-
-once the watch is in DFU mode
-to upload ./uploadblue (adapt bluetooth mac address)
+A) if you upload the dfuboot.hex, by default it will be in DFU mode (use the uploadbooter script)
+B) execute ./uploadblue (adapt bluetooth mac address) script
 
 
 

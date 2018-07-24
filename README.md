@@ -53,7 +53,10 @@ if (NRF_POWER->GPREGRET==0xBB){
 
 
 
-once in dfu-mode, you can use the uploadblue script to upload firmware via bluetooth
+you can use the uploadblue script to upload firmware via bluetooth
+-> it will create a package with the private key and the hex-file as compiled with platformio
+-> it will set the watch to dfu mode
+-> it will upload via over the air
 
 -----------------------------------------------------------------------
 under the "src" directory you'll find the "arduino" program with some "nordic" flavours

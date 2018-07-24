@@ -65,8 +65,8 @@ BLEPeripheral                    blePeripheral                            = BLEP
 //this is from led_switch.ino, but instead of switching a led, I want to use this
 //to soft-reset the watch, thus forcing it into DFU mode
 
-BLEService               ledService           = BLEService("19b10010e8f2537e4f6cd104768a1214");
-BLECharCharacteristic    switchCharacteristic = BLECharCharacteristic("19b10011e8f2537e4f6cd104768a1214", BLERead | BLEWrite);
+BLEService               ledService           = BLEService("19b10010-e8f2-537e-4f6c-d104768a1214");
+BLECharCharacteristic    switchCharacteristic = BLECharCharacteristic("19b10010-e8f2-537e-4f6c-d104768a1214", BLERead | BLEWrite);
 
 
 /*

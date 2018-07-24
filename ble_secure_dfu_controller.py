@@ -71,7 +71,7 @@ class Results:
 
 class BleDfuControllerSecure(NrfBleDfuController):
     # Class constants
-    UUID_BUTTONLESS      = '8e400001-f315-4f60-9fb8-838830daea50'
+    UUID_BUTTONLESS      = '19b10010-e8f2-537e-4f6c-d104768a1214'
     UUID_CONTROL_POINT   = '8ec90001-f315-4f60-9fb8-838830daea50'
     UUID_PACKET          = '8ec90002-f315-4f60-9fb8-838830daea50'
 
