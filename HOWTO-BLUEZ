@@ -1,0 +1,67 @@
+--start bluetoothctl
+
+#bluetoothctl
+
+
+[bluetooth]# scan on
+Discovery started
+[CHG] Controller 00:1A:7D:DA:71:0B Discovering: yes
+[CHG] Device DA:E2:C9:AB:2F:65 RSSI: -43
+[CHG] Device DA:E2:C9:AB:2F:65 Name: LED Switch
+[CHG] Device DA:E2:C9:AB:2F:65 Alias: LED Switch
+
+
+[bluetooth]# connect DA:E2:C9:AB:2F:65
+Attempting to connect to DA:E2:C9:AB:2F:65
+[CHG] Device DA:E2:C9:AB:2F:65 Connected: yes
+Connection successful
+[CHG] Device DA:E2:C9:AB:2F:65 Name: Arduino
+[CHG] Device DA:E2:C9:AB:2F:65 Alias: Arduino
+[CHG] Device DA:E2:C9:AB:2F:65 ServicesResolved: yes
+
+
+----goto gatt menu
+
+[LED Switch]# menu gatt
+
+
+
+[LED Switch]# list-attributes DA:E2:C9:AB:2F:65
+Primary Service
+/org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service000c
+19b10010-e8f2-537e-4f6c-d104768a1214
+Vendor specific
+Characteristic
+/org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service000c/char000d
+19b10011-e8f2-537e-4f6c-d104768a1214
+Vendor specific
+Primary Service
+/org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service0008
+00001801-0000-1000-8000-00805f9b34fb
+Generic Attribute Profile
+Characteristic
+/org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service0008/char0009
+00002a05-0000-1000-8000-00805f9b34fb
+Service Changed
+Descriptor
+/org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service0008/char0009/desc000b
+00002902-0000-1000-8000-00805f9b34fb
+Client Characteristic Configuration
+
+-----select the LED attribute (defined in arduino-sketch)
+
+
+[LED Switch]# select-attribute 19b10011-e8f2-537e-4f6c-d104768a1214
+
+----write a value
+
+[Arduino:/service000c/char000d]# write 0xff
+Attempting to write /org/bluez/hci0/dev_DA_E2_C9_AB_2F_65/service000c/char000d
+[CHG] Device DA:E2:C9:AB:2F:65 ServicesResolved: no
+[CHG] Device DA:E2:C9:AB:2F:65 Connected: no
+
+----et voila the device is in DFU mode
+
+[NEW] Device DA:E2:C9:AB:2F:66 DfuTarg
+
+
